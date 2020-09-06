@@ -13,16 +13,6 @@ public class SoldierFormation : MonoBehaviour
     [SerializeField]
     private LeaderComponent m_Leader;
 
-    [Header("Perception")]
-    [SerializeField]
-    private float m_VisionAngle = 90f;
-
-    [SerializeField]
-    private float m_VisionDist = 10f;
-
-    [SerializeField]
-    private float m_HearingDistance = 5f;
-
     public int m_NumberOfSoldiers = 1000;
 
     public GameObject m_SoldierPrefab;
@@ -35,9 +25,6 @@ public class SoldierFormation : MonoBehaviour
         GameObjectConversionSettings settings = new GameObjectConversionSettings(world, 0);
         var entity = GameObjectConversionUtility.ConvertGameObjectHierarchy(m_SoldierPrefab, settings);
 
-        entityManager.AddComponentData(entity, new AlertComponent {  AlertType = 0});
-        entityManager.AddComponentData(entity, new VisionPerceptionComponent { Angle = m_VisionAngle, Distance = m_VisionDist });
-        entityManager.AddComponentData(entity, new HearingPerceptionComponent { Distance = m_HearingDistance });
         entityManager.AddComponentData(entity, new Health { Value = 1 });
         entityManager.AddComponentData(entity, new Velocity { Value = 0 });
         entityManager.AddComponentData(entity, new SteeringAgent { TargetPosition = float3.zero });
