@@ -12,7 +12,7 @@ public class OrbFormationSystem : SystemBase
 
         Entities
             .WithAll<OrbFormation>()
-            .ForEach((ref SteeringAgent agent, in FormationIndex formationIndex) =>
+            .ForEach((ref SteeringAgent agent, in FormationPlacement formationIndex) =>
         {
             var index = formationIndex.Index;
             var entityCount = formationIndex.Count;

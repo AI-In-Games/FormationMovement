@@ -8,7 +8,7 @@ public struct FormationGroup : ISharedComponentData { public int LeaderId; }
 public struct FormationLeader : IComponentData { public int Id; }
 
 [Serializable]
-public struct FormationIndex : IComponentData { public int Index; public int Count; }
+public struct FormationPlacement : IComponentData { public int Index; public int Count; }
 
 [Serializable]
 public struct TestudoFormation : IComponentData { }

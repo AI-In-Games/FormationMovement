@@ -39,7 +39,7 @@ public class SoldierFormation : MonoBehaviour
         for(int i = 0; i < m_NumberOfSoldiers; i++)
         {
             entityManager.SetComponentData(entities[i], translation);
-            entityManager.AddComponentData(entities[i], new FormationIndex { Index = i, Count = m_NumberOfSoldiers });
+            entityManager.AddComponentData(entities[i], new FormationPlacement { Index = i, Count = m_NumberOfSoldiers });
         }
         entities.Dispose();
 

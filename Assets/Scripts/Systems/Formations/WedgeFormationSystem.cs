@@ -11,7 +11,7 @@ public class WedgeFormationSystem : SystemBase
 
         Entities
             .WithAll<WedgeFormation>()
-           .ForEach((ref SteeringAgent agent, in FormationIndex formationIndex) =>
+           .ForEach((ref SteeringAgent agent, in FormationPlacement formationIndex) =>
            {
                var index = formationIndex.Index + 2;
                var z = index / 2 * distance;

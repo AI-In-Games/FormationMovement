@@ -12,7 +12,7 @@ public class TestudoFormationSystem : SystemBase
 
         Entities
             .WithAll<TestudoFormation>()
-           .ForEach((ref SteeringAgent agent, in FormationIndex formationIndex) =>
+           .ForEach((ref SteeringAgent agent, in FormationPlacement formationIndex) =>
            {
                var index = formationIndex.Index;
                float midX = (width - 1) / 2f;
